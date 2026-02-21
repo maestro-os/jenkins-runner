@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:trixie-jdk25
+FROM jenkins/agent:trixie-jdk25
 
 # Take root rights
 USER 0
@@ -29,9 +29,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 	    texinfo \
         # required by grub to make ISOs
 	    xorriso
-RUN --mount=type=cache,target=/usr/local/cargo/git/db \
-	--mount=type=cache,target=/usr/local/cargo/registry/ \
-    rustup default stable && cargo install mdbook mdbook-mermaid
 
 # Build & install binutils
 WORKDIR /ld-build
