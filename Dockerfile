@@ -11,22 +11,24 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         # for running scripts
         bash \
         # for building binutils
-	    build-essential \
+        build-essential \
         # for compiling assembly code
-	    clang \
+        clang \
+        # for building image for integration tests
+        e2fsprogs \
         # for creating a bootable ISO
-	    grub-pc-bin \
-	    # libssl-dev \
+        grub-pc-bin \
+        # libssl-dev \
         # for linking maestro
-	    lld \
-	    # perl \
-	    # pkg-config \
+        lld \
+        # perl \
+        # pkg-config \
         # for running maestro
-	    qemu-system \
+        qemu-system \
         # for having rust
         rustup \
         # for building binutils
-	    texinfo \
+        texinfo \
         # required by grub to make ISOs
 	    xorriso
 
